@@ -5,7 +5,6 @@ import express from "express";
 const app = express();
 import morgan from "morgan";
 import mongoose from "mongoose";
-import { body, validationResult } from "express-validator";
 
 // routers
 import jobRouter from "./routes/jobRouter.js";
@@ -22,20 +21,6 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
-
-app.post(
-  "/api/v1/test",
-  [body("name").notEmpty().withMessage("name is required")],
-  (req, res, next) => {
-    const errors = validationResult(req);
-    console.log(errors);
-    next();
-  },
-  (req, res) => {
-    const { name } = req.body;
-    res.json({ message: `hello ${name}` });
-  }
-);
 
 app.use("/api/v1/jobs", jobRouter);
 
