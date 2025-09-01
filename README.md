@@ -10,7 +10,7 @@ Atualmente, já finalizei a maior parte dos estudos em **React.js** e estou avan
 - **Frontend**: React.js
 - **Backend**: Node.js
 - **Linguagem**: JavaScript
-- **Banco de Dados**: (Em andamento – planejado integrar em breve)
+- **Banco de Dados**: MongoDB
 
 ---
 
@@ -37,7 +37,7 @@ Atualmente, já finalizei a maior parte dos estudos em **React.js** e estou avan
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/Beto414/jobify
    Instale as dependências do frontend:
    ```
 
@@ -56,13 +56,8 @@ npm run dev
 📖 Sobre mim
 Sou desenvolvedor em formação, com foco em JavaScript, React.js e Node.js.
 Este projeto é parte da minha evolução prática no desenvolvimento full stack.
+Comecei a usar o GitHub recentemente!
 
 📩 Contato
-LinkedIn: Seu Perfil
-
-E-mail: seuemail@email.com
-
-pgsql
-Copiar código
-
-Quer que eu ajuste esse README para **ser só do frontend (React)**, já que o back-end ainda não está pronto, ou prefere deixar no formato **full stack** mesmo?
+LinkedIn: https://www.linkedin.com/in/antoniorobertogarcia
+E-mail: antoniorgms@gmail.com
