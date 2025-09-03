@@ -22,6 +22,14 @@ if (process.env.NODE_ENV === "development") {
 app.use(cookieParser());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+app.get("/api/v1/test", (req, res) => {
+  res.json({ msg: "test route" });
+});
+
 app.use("/api/v1/jobs", authenticateUser, jobRouter);
 app.use("/api/v1/users", authenticateUser, userRouter);
 app.use("/api/v1/auth", authRouter);
@@ -36,7 +44,7 @@ const port = process.env.PORT || 5100;
 
 try {
   await mongoose.connect(process.env.MONGO_URL);
-  app.listen(port, () => {
+  app.listen(port, "0.0.0.0", () => {
     console.log(`server running on PORT ${port}...`);
   });
 } catch (error) {
