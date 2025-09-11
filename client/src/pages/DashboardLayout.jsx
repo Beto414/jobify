@@ -4,6 +4,7 @@ import { BigSidebar, SmallSidebar, Navbar } from "../components";
 import { createContext, useState, useContext } from "react";
 import { checkDefaultTheme } from "../App";
 import customFetch from "../utils/customFetch";
+import { toast } from "react-toastify";
 
 export const loader = async () => {
   try {
@@ -16,13 +17,11 @@ export const loader = async () => {
 
 const DashboardContext = createContext();
 
-const DashboardLayout = ({ isDarkThemeEnabled }) => {
+const DashboardLayout = () => {
   const { user } = useLoaderData();
   const navigate = useNavigate();
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    checkDefaultTheme(isDarkThemeEnabled)
-  );
+  const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
 
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
@@ -67,5 +66,6 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
     </DashboardContext.Provider>
   );
 };
+
 export const useDashboardContext = () => useContext(DashboardContext);
 export default DashboardLayout;

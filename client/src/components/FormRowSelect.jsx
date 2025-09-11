@@ -21,3 +21,5 @@ const FormRowSelect = ({ name, labelText, list, defaultValue = "" }) => {
     </div>
   );
 };
+
+export default FormRowSelect;

@@ -16,7 +16,7 @@ const withValidationErrors = (validateValues) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         const errorMessages = errors.array().map((error) => error.msg);
-        if (errorMessages[0].startWith("no job")) {
+        if (errorMessages[0].startsWith("no job")) {
           throw new NotFoundError(errorMessages);
         }
         if (errorMessages[0].startsWith("not authorized")) {
@@ -83,7 +83,6 @@ export const validateLoginInput = withValidationErrors([
     .isEmail()
     .withMessage("invalid email format"),
   body("password").notEmpty().withMessage("password is required"),
-  body("lastName").notEmpty().withMessage("last name is required"),
 ]);
 
 export const validateUpdateUserInput = withValidationErrors([

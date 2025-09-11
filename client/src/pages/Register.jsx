@@ -33,7 +33,7 @@ const Register = () => {
           labelText="last name"
           defaultValue="hoffman"
         />
-        <FormRow type="text" name="Location" defaultValue="Norway" />
+        <FormRow type="text" name="location" defaultValue="Norway" />
         <FormRow type="email" name="email" defaultValue="beto@gmail.com" />
         <FormRow type="password" name="password" defaultValue="secret123" />
         <button type="submit" className="btn btn-block" disabled={isSubmittin}>
