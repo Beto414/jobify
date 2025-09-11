@@ -13,7 +13,7 @@ const links = [
   },
   {
     text: "all jobs",
-    path: ".all-jobs",
+    path: "all-jobs",
     icon: <MdQueryStats />,
   },
   {
