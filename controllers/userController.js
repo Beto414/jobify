@@ -14,6 +14,7 @@ export const getAplicationStats = async (req, res) => {
   res.status(StatusCodes.OK).json({ users, jobs });
 };
 export const updateUser = async (req, res) => {
+  console.log(req.file);
   const obj = { ...req.body };
   delete obj.password;
   const updatedUser = await User.findByIdAndUpdate(req.user.userId, obj);
