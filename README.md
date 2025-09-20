@@ -1,99 +1,144 @@
-# Projeto Jobify
+# Jobify - Aplicação Full-Stack de Rastreamento de Vagas
 
-Este repositório documenta minha jornada de aprendizado e aprofundamento em tecnologias **Full Stack**, com foco em **Node.js** (backend) e **React.js** (frontend). O projeto Jobify visa a construção de uma aplicação completa para gerenciamento de vagas de emprego, demonstrando a integração eficiente entre diferentes camadas tecnológicas.
+**Jobify** é uma aplicação Full-Stack completa construída com o MERN Stack (MongoDB, Express.js, React, Node.js). Este projeto representa um passo significativo na minha jornada de aprofundamento em tecnologias de desenvolvimento web, com o objetivo de criar uma solução robusta e eficiente para o gerenciamento de candidaturas de emprego.
 
----
-
-## Tecnologias Utilizadas
-
-Este projeto utiliza as seguintes tecnologias em seu desenvolvimento:
-
-- **Frontend**: React.js
-- **Backend**: Node.js
-- **Linguagem de Programação**: JavaScript
-- **Banco de Dados**: MongoDB
+A aplicação permite que os usuários monitorem todo o ciclo de vida de suas candidaturas, desde o envio inicial até as entrevistas e decisões finais, através de uma interface moderna e reativa.
 
 ---
 
-## Objetivos do Projeto
+## ✨ Funcionalidades Principais
 
-Os principais objetivos deste projeto incluem:
-
-- Consolidar conhecimentos e práticas avançadas em React.js (desenvolvimento frontend).
-- Aprender e aplicar conceitos fundamentais e avançados de Node.js (desenvolvimento backend).
-- Criar aplicações completas (Full Stack), estabelecendo a conexão e comunicação entre frontend e backend.
-- Aperfeiçoar as boas práticas de desenvolvimento de software, incluindo organização de código, design patterns e performance.
-
----
-
-## Funcionalidades (em progresso)
-
-As funcionalidades implementadas e em desenvolvimento são listadas abaixo:
-
-- [x] Estrutura inicial e organização do frontend utilizando React.
-- [x] Componentização modular e gerenciamento de estado da aplicação frontend.
-- [ ] Configuração e desenvolvimento do backend em Node.js, expondo uma API RESTful.
-- [ ] Implementação da integração e comunicação entre o frontend e o backend.
-- [ ] Desenvolvimento de módulos de autenticação de usuários (ex: JWT) e integração com o banco de dados MongoDB.
-- [ ] Implementação das operações CRUD (Criar, Ler, Atualizar, Deletar) para gerenciamento de vagas de emprego.
+- ✅ **Autenticação Segura**: Sistema completo de registro e login com senhas hasheadas (Bcrypt) e tokens JWT armazenados em cookies HTTP-only para máxima segurança.
+- ✅ **Dashboard Interativo**: Visualize estatísticas de candidaturas (pendentes, entrevistas, recusadas) e um gráfico de atividades mensais.
+- ✅ **Gerenciamento de Vagas (CRUD)**: Adicione, visualize, edite e exclua vagas de emprego de forma intuitiva e persistente.
+- ✅ **Busca e Filtragem Avançada**: Pesquise vagas por cargo ou empresa, filtre por status e tipo, e ordene os resultados para encontrar o que precisa.
+- ✅ **Perfil de Usuário Personalizável**: Atualize suas informações e faça upload de uma foto de perfil, com armazenamento de imagens na nuvem (Cloudinary).
+- ✅ **Tema Escuro/Claro**: Alterne entre os temas para uma melhor experiência visual, com a preferência salva no `localStorage`.
+- ✅ **Painel de Administrador**: Rota protegida para administradores visualizarem estatísticas gerais da aplicação (total de usuários e vagas).
+- ✅ **Design Responsivo**: Interface totalmente funcional e agradável em dispositivos móveis e desktops.
 
 ---
 
-## Como Executar o Projeto
+## 🛠️ Tecnologias Utilizadas
 
-Para configurar e executar o projeto Jobify em sua máquina local, siga os passos abaixo:
+Este projeto foi construído utilizando um ecossistema moderno de tecnologias JavaScript.
 
-1.  **Clonar o Repositório:**
-    Abra seu terminal e execute o comando:
+#### Backend
 
-    ```bash
-    git clone https://github.com/Beto414/jobify
-    cd jobify
-    ```
+- **Node.js**: Ambiente de execução JavaScript.
+- **Express.js**: Framework para a construção da API REST.
+- **MongoDB**: Banco de dados NoSQL para armazenamento de dados.
+- **Mongoose**: ODM para modelagem dos dados do MongoDB.
+- **JSON Web Token (JWT)**: Para autenticação segura baseada em tokens.
+- **Cloudinary**: Para armazenamento e gerenciamento de imagens na nuvem.
+- **Segurança**: `helmet`, `express-mongo-sanitize`, `express-rate-limit`.
 
-2.  **Configuração do Frontend:**
-    Navegue até o diretório `frontend` e instale as dependências:
+#### Frontend
 
-    ```bash
-    cd frontend
-    npm install
-    npm start
-    ```
-
-    O frontend será iniciado e acessível em `http://localhost:3000`.
-
-3.  **Configuração do Backend (em construção):**
-
-    - Navegue até o diretório `backend`:
-      ```bash
-      cd ../backend
-      ```
-    - Crie um arquivo `.env` na raiz do diretório `backend`. Este arquivo conterá as variáveis de ambiente necessárias para a aplicação, como `MONGO_URI` (URI de conexão do MongoDB) e `JWT_SECRET` (chave secreta para tokens de autenticação).
-    - Instale as dependências:
-      ```bash
-      npm install
-      ```
-    - Inicie o servidor backend:
-      `bash
-    npm run dev
-    `
-      O backend será iniciado e estará disponível em `http://localhost:5000` (ou na porta configurada nas variáveis de ambiente).
-
-    **Importante:** O frontend e o backend devem ser executados em terminais separados e simultaneamente para que a aplicação funcione corretamente.
+- **React.js**: Biblioteca para construção da interface de usuário.
+- **Vite**: Ferramenta de build para um desenvolvimento frontend ultrarrápido.
+- **React Router**: Para roteamento com `loaders` e `actions`, permitindo uma UX moderna.
+- **React Query (TanStack Query)**: Para gerenciamento de estado do servidor, cache e sincronização de dados.
+- **Axios**: Cliente HTTP para realizar requisições à API.
+- **Styled Components**: Para estilização CSS-in-JS.
+- **Recharts**: Para a criação de gráficos interativos.
 
 ---
 
-## Autor
+## 🚀 Como Rodar o Projeto Localmente
+
+Siga os passos abaixo para configurar e executar o projeto em sua máquina.
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/en/) (versão 18 ou superior)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (conta gratuita é suficiente)
+- [Cloudinary](https://cloudinary.com/) (conta gratuita para upload de imagens)
+
+### 1. Clonar o Repositório
+
+```bash
+git clone https://github.com/Beto414/jobify.git
+cd jobify
+```
+
+### 2. Configurar Variáveis de Ambiente
+
+Na **raiz do projeto**, crie um arquivo chamado `.env` e adicione as seguintes variáveis, substituindo os valores pelos seus.
+
+```env
+# Porta do Servidor
+PORT=5100
+
+# String de conexão com o MongoDB Atlas
+MONGO_URL=mongodb+srv://<user>:<password>@cluster0.mongodb.net/jobify?retryWrites=true&w=majority
+
+# Chaves secretas para o JWT (use uma string longa e aleatória)
+JWT_SECRET=your_super_secret_jwt_key
+JWT_EXPIRES_IN=1d
+
+# Credenciais do Cloudinary para upload de imagens
+CLOUD_NAME=your_cloudinary_cloud_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloudinary_api_secret
+```
+
+### 3. Instalar as Dependências
+
+Este projeto usa um script para instalar as dependências do servidor e do cliente de uma só vez.
+
+````bash
+npm run setup-project```
+
+### 4. Executar a Aplicação
+
+Use o script `dev` para iniciar o servidor backend e o servidor de desenvolvimento do frontend simultaneamente.
+
+```bash
+npm run dev
+````
+
+- O **Backend** estará rodando em `http://localhost:5100`
+- O **Frontend** estará acessível em `http://localhost:5173`
+
+Acesse `http://localhost:5173` no seu navegador para ver a aplicação em funcionamento.
+
+### 5. (Opcional) Popular o Banco de Dados com Dados de Exemplo
+
+Para testar a aplicação com um volume maior de dados (gráficos, paginação, etc.), você pode popular o banco de dados com vagas de exemplo.
+
+> **Importante:** Primeiro, você deve registrar um novo usuário na aplicação com o email `alicia@gmail.com`. O script associará os dados a este usuário.
+
+Após registrar o usuário de teste, execute o seguinte comando na raiz do projeto:
+
+```bash
+node populate.js
+```
+
+---
+
+### ✨ Explore o App com o Usuário de Teste
+
+Não quer se registrar? Sem problemas! Na página de login, clique no botão **"Explore the App"**.
+
+Isso fará o login com um usuário de demonstração pré-configurado (`alicia@gmail.com`), permitindo que você navegue por todas as funcionalidades da aplicação imediatamente.
+
+> **Atenção:** O usuário de demonstração possui permissões de **apenas leitura**. Você não poderá adicionar, editar ou excluir vagas com esta conta.
+
+---
+
+## 👤 Autor
 
 **Antonio Roberto Garcia (Beto)**
+
 Desenvolvedor em formação, com especial interesse e foco em JavaScript, React.js e Node.js. Este projeto é parte fundamental da minha evolução prática no desenvolvimento full stack e na criação de soluções de software robustas.
 
 - **LinkedIn**: [antoniorobertogarcia](https://www.linkedin.com/in/antoniorobertogarcia)
-- **E-mail**: antoniorgms@gmail.com
 - **GitHub**: [Beto414](https://github.com/Beto414)
+- **E-mail**: antoniorgms@gmail.com
 
 ---
 
-## Licença
+## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o arquivo `LICENSE` na raiz deste repositório.
