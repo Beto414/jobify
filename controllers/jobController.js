@@ -12,8 +12,8 @@ export const getAllJobs = async (req, res) => {
 
   if (search) {
     queryObject.$or = [
-      { position: { $regex: search, $options: "1" } },
-      { company: { $regex: search, $options: "1" } },
+      { position: { $regex: search, $options: "i" } },
+      { company: { $regex: search, $options: "i" } },
     ];
   }
 
@@ -39,7 +39,7 @@ export const getAllJobs = async (req, res) => {
   const limit = Number(req.query.limit) || 10;
   const skip = (page - 1) * limit;
 
-  const jobs = (await Job.find(queryObject))
+  const jobs = await Job.find(queryObject)
     .sort(sortKey)
     .skip(skip)
     .limit(limit);
